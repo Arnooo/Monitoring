@@ -1,0 +1,17 @@
+<!-- <div id="probesList_div" style="display:table-cell;">
+	<select style="width:150px;height:200px;" ng-change="onSelectProbe()" size="2" ng-model="probeSelected_uid" ng-options="p.probe_uid as p.probe_uid + ' ' + p.probe_config_uid + ' ' +p.probe_name for p in probesManagement" ></select>
+	</br>
+	<button ng-click="addProbe()">+</button>
+	<button ng-click="rmProbe()">-</button>
+</div> -->
+<div style="display:table;">
+    <div ng-repeat="p in probesManagement" div style="display:table-row;">
+        | {{p.probe_name}} | {{p.probe_type}}:  
+        <div style="display:table-cell;">
+            <button ng-click="onClickProbeStatus(p.probe_uid, p.probe_config_uid, p.probe_is_running)" style="width:70px;">{{p.probe_is_running?"Enabled":"Disabled"}}</button> 
+        </div>
+        <div style="display:table-cell;">
+            <span> {{p.probe_is_connected?"Connected":"Disconnected"}} </span>
+        </br>
+    </div>
+</div>

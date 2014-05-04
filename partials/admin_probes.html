@@ -1,0 +1,56 @@
+
+<div id="adminProbes_div" style="display:table;">
+	<div id="probesList_div" style="display:table-cell;">
+		<select style="width:150px;height:100%;" ng-change="onSelectProbe()" size="2" ng-model="probeSelected_uid" ng-options="p.probe_uid as p.probe_uid + ' ' +p.probe_name for p in probes" ></select>
+		</br>
+		<button ng-click="addProbe()">+</button>
+		<button ng-click="rmProbe()">-</button>
+	</div>
+	<div style="display:table-cell;vertical-align:top;">
+		<div id="probeData_div" >
+			PROBE : <span> {{probeSelected.probe_uid}} </span>  <input ng-change="updateProbe()" type="text" ng-model="probeSelected.probe_name" >
+			</br>
+			<textarea style="width:100%;" ng-change="updateProbe()"  ng-model="probeSelected.description" >Description</textarea>
+		</div>
+		<div style="display:table;">
+			<div id="probeConfigList_div" style="display:table-cell;">
+				<select style="width:150px;height:100%;" ng-change="onSelectProbeConfig()" size="2" ng-model="probeConfigSelected_uid" ng-options="p.probe_config_uid as p.probe_config_uid + ' ' +p.probe_type for p in probeConfig" ></select>
+				</br>
+				<button ng-click="addProbeConfig()">+</button>
+				<button ng-click="rmProbeConfig()">-</button>
+			</div>
+			<div id="probeData_div" style="display:table-cell;vertical-align:top;">
+				Probe config : <span> {{probeConfigSelected.probe_config_uid}} </span>
+				
+				 <input type="text" ng-change="updateProbeConfig()" ng-model="probeConfigSelected.probe_type" >
+				</br>
+				Node Module: <input type="text" ng-change="updateProbeConfig()" ng-model="probeConfigSelected.node_module" >
+				</br>
+				Unit: <input type="text" style="width:50px" ng-change="updateProbeConfig()" ng-model="probeConfigSelected.unit" >
+				</br>
+				<hr>
+				Probe Acqu Mode : <select  ng-change="onSelectProbeAcquMode()" ng-model="probeAcquModeSelected_uid" ng-options="p.probe_acqu_mode_uid as p.probe_acqu_mode_uid + ' ' +p.acquisition_mode_name for p in probeAcquMode" ></select>
+				<button ng-click="addProbeAcquMode()">+</button>
+				<button ng-click="rmProbeAcquMode()">-</button>
+				<div class="probe-acqu-mode-div">
+					-> Name : <input type="text" ng-change="updateProbeAcquMode()" ng-model="probeAcquModeSelected.acquisition_mode_name" >
+					</br>
+					-> Mode : <select ng-model="probeAcquModeSelected.acquisition_mode" ng-options="opt for opt in acquModeOptions"></select>
+					</br>
+					-> Frequency (Hz) : <input style="width:40px" type="number" ng-change="updateProbeAcquMode()" ng-model="probeAcquModeSelected.frequency_hz" >
+					</br>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--<p ng-repeat="probeConf in probes">
+	Probe Type: <select ng-model="probes[$index]" name="currentProbe" ng-options="p.probe_uid for p in probes"></select>
+	Probe Name: <input type="text" ng-model="probeConf.probe_name" >
+	Probe UID: <input type="number" ng-model="probeConf.probe_uid" >
+<p>-->
+
+
+ 
+

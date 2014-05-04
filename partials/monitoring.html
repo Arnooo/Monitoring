@@ -1,0 +1,12 @@
+
+ <div class="splash" ng-if="!graphs">
+      <p>Loading graphs...</p>
+</div>
+<div  class="graph-container" ng-repeat="graph in graphs">
+    <span>{{graph.opts.title}}: {{graph.last[1]}}{{graph.opts.labels[1]}}</span>
+    <div class="splash" ng-if="graph.data.length===0">
+          <p>Loading graph...</p>
+    </div>
+    <graph class="graph" data="graph.data" opts="graph.opts" ></graph>
+</div>
+
