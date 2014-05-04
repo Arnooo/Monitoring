@@ -7,9 +7,31 @@ INSTALL
 -------
 
 1- Make sure NodeJS is installed on your computer
-2- Install node-monitoring in "node_modules" folder. 
-    a- Create a "node_modules" folder in the "Monitoring/server" directory
-    b- Install the module using: 
-            npm install Monitoring
-3- Go to "http://localhost:8000/index.html" to open the Application
-4- Here we go, you can add probes/sensors and check value in realtime
+
+    node -v
+
+2- Install node-monitoring in node_modules/, create it in the "Monitoring/server/" directory if needed.
+
+    cd Monitoring/server/
+    mkdir node_modules
+    
+3- Install the module using: 
+
+    npm install node-monitoring
+    
+4- Launch your mysql server
+
+    mysql.server start
+            
+5- Go to "http://localhost:8000/index.html" to open the Monitoring Application
+
+6- Configure your access to the database
+
+7- Here we go, you can add probes/sensors and check value in realtime
+
+TEST
+----
+
+VERSION
+------
+Release: 0.1.0
