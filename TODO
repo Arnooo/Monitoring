@@ -1,0 +1,3 @@
+TODO
+- Move all $http call to Monitoring provider
+- Probes/Sensors config should be given by node_modules
