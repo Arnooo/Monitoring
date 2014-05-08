@@ -41,7 +41,7 @@ angular.element(document).ready(
   function() {
     var initInjector = angular.injector(['ng']);
     var $http = initInjector.get('$http');
-    $http.get('json/config.json').then(
+    $http.get('monitoring.query?callback=getConfig').then(
       function(response) {
         app.constant('CONFIG', response.data);
         angular.bootstrap(document, ['myApp']);
